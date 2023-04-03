@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -35,12 +36,18 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
 
-        if(startPushing)
+        ResetOnStartPushing();
+    }
+
+    private void ResetOnStartPushing()
+    {
+        if (startPushing)
         {
             currentDirection = transform.up;
-            currentPushForce =0f;
+            currentPushForce = 0f;
         }
     }
+
     private void FixedUpdate()
     {
         SetMovement();
@@ -48,18 +55,21 @@ public class PlayerController : MonoBehaviour
 
     private void GetInput()
     {
+        //Rotation Input
         rotDirection = (int)Input.GetAxisRaw("Horizontal");
-
+        //Movement Input
         startPushing = Input.GetKeyDown(KeyCode.W);
         isPushing = Input.GetKey(KeyCode.W);
-
+        //Shooting Input
         if (Input.GetKeyDown(KeyCode.Space)) { shooting.Shot(); }
     }
 
     private void SetMovement()
     {
+        //Rotation
         transform.Rotate(0f, 0f, -rotDirection * rotSpeed);
 
+        //Movement
         if(isPushing)
         {
             currentPushForce = Mathf.Clamp(currentPushForce += speedForce, 0f, maxSpeed);

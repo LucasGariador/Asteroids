@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Tooltip("Position and direction to shot")]
     private Transform shootingPoint;
-    [SerializeField]
+    [SerializeField, Tooltip("Time between shots")]
     private float cooldown;
-    [SerializeField]
+    [SerializeField, Tooltip("Starting speed of the bullet")]
     private float bulletSpeed;
 
     private float timer = 0;
@@ -20,6 +20,11 @@ public class Shooting : MonoBehaviour
         timer = cooldown;
     }
     private void Update()
+    {
+        RunTimer();
+    }
+
+    private void RunTimer()
     {
         if (!canShot && timer >= 0)
         {
@@ -35,7 +40,7 @@ public class Shooting : MonoBehaviour
     {
         if (canShot)
         {
-            var bullet = ObjectsPooling.Instance.bulletsPool.Get();
+            var bullet = ObjectsPooling.Instance.BulletsPool.Get();
             bullet.transform.SetPositionAndRotation(shootingPoint.position, shootingPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed);
 
