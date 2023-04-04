@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,7 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float spawnDelay = 2f;
 
-    private bool initiated = false;
+    private bool isInitiated = false;
     private Transform player;
     private Camera cam; 
 
@@ -36,7 +34,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if (initiated)
+        if (isInitiated)
         CheckForAsteroidsLeft();
     }
 
@@ -53,7 +51,7 @@ public class GameManager : MonoBehaviour
         if (i == 0)
         {
             SpawnWithDelay();
-            initiated = false;
+            isInitiated = false;
         }
     }
 
@@ -74,7 +72,7 @@ public class GameManager : MonoBehaviour
                 i++;
             }
         }
-        initiated = true;
+        isInitiated = true;
     }
 
     ///Generate a random vector3

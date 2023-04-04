@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -34,8 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-            GetInput();
-
+        GetInput();
 
         ResetOnStartPushing();
     }
@@ -62,7 +60,7 @@ public class PlayerController : MonoBehaviour
         startPushing = Input.GetKeyDown(KeyCode.W);
         isPushing = Input.GetKey(KeyCode.W);
         //Shooting Input
-        if (Input.GetKeyDown(KeyCode.Space)) { shooting.Shot(); }
+        if (Input.GetMouseButtonDown(0)) { shooting.Shot(); }
     }
 
     private void SetMovement()

@@ -1,29 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
     private float lifespan;
+    private float bulletTimer;
 
-    private float timer;
     private void OnEnable()
     {
-        timer = lifespan;
+        bulletTimer = lifespan;
     }
 
     private void Update()
     {
-        if (timer < 0)
+        if (bulletTimer < 0)
             DisableBullet();
         else
-            timer -= Time.deltaTime;
+            bulletTimer -= Time.deltaTime;
     }
 
-    public void DisableBullet()
-    {
-        ObjectsPooling.Instance.BulletsPool.Release(gameObject);
-    }
+    public void DisableBullet() => ObjectsPooling.Instance.BulletsPool.Release(gameObject);
 }

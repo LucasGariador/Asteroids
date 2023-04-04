@@ -8,7 +8,6 @@ public class Asteroid : MonoBehaviour
     private float minStartVel;
     [SerializeField]
     private float maxStartVel;
-
     private Rigidbody2D rb;
 
     private void OnEnable()

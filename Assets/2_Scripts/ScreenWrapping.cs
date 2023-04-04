@@ -43,10 +43,7 @@ public class ScreenWrapping : MonoBehaviour
         }
 
         Vector3 newPosition = transform.position;
-
-
         Vector3 viewportPosition = cam.WorldToViewportPoint(transform.position);
-
 
         if (!isWrappingX && (viewportPosition.x > 1 || viewportPosition.x < 0))
         {
