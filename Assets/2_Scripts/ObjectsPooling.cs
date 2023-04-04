@@ -39,7 +39,7 @@ public class ObjectsPooling : MonoBehaviour
         }, bullet =>
         {
             Destroy(bullet);
-        },false,50,100);
+        },false,30,50);
 
         BigAsteroidPool = new ObjectPool<GameObject>(() =>
         {
@@ -69,20 +69,4 @@ public class ObjectsPooling : MonoBehaviour
             Destroy(smallAsteroid);
         }, false, 10, 20);
     }
-
-    public void DisableBullet(GameObject bullet)
-    {
-        BulletsPool.Release(bullet);
-    }
-
-    public void DisableBigAsteroid(GameObject asteroid)
-    {
-        BigAsteroidPool.Release(asteroid);
-    }
-
-    public void DisableSmallAsteroid(GameObject asteroid)
-    {
-        SmallAsteroidPool.Release(asteroid);
-    }
-
 }

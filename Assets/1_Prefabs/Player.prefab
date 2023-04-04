@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8626344295353020207}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   rotSpeed: 9
   speedForce: 0.2
   acceleration: 0.1
-  maxSpeed: 2
+  maxSpeed: 1
 --- !u!114 &2342415417496473954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 234737985902458616}
-  cooldown: 0.5
+  cooldown: 0.2
   bulletSpeed: 400
 --- !u!114 &371684526953281490
 MonoBehaviour:
@@ -189,7 +189,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.53, y: 0.7}
   m_EdgeRadius: 0
 --- !u!50 &8626344295353020207
 Rigidbody2D:

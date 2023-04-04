@@ -7,13 +7,23 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     private float lifespan;
+
+    private float timer;
     private void OnEnable()
     {
-        Invoke(nameof(DisableBullet), lifespan);
+        timer = lifespan;
+    }
+
+    private void Update()
+    {
+        if (timer < 0)
+            DisableBullet();
+        else
+            timer -= Time.deltaTime;
     }
 
     public void DisableBullet()
     {
-        ObjectsPooling.Instance.DisableBullet(gameObject);
+        ObjectsPooling.Instance.BulletsPool.Release(gameObject);
     }
 }

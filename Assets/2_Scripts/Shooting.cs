@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -43,6 +40,7 @@ public class Shooting : MonoBehaviour
             var bullet = ObjectsPooling.Instance.BulletsPool.Get();
             bullet.transform.SetPositionAndRotation(shootingPoint.position, shootingPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(bullet.transform.up * bulletSpeed);
+            bullet.GetComponent<Rigidbody2D>().gravityScale = 0f;
 
             timer = cooldown;
             canShot = false;

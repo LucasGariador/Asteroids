@@ -29,12 +29,13 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         shooting = GetComponent<Shooting>();
-
+        rb.gravityScale = 0f;
     }
 
     void Update()
     {
-        GetInput();
+            GetInput();
+
 
         ResetOnStartPushing();
     }
