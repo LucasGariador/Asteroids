@@ -67,6 +67,6 @@ public class ObjectsPooling : MonoBehaviour
         }, smallAsteroid =>
         {
             Destroy(smallAsteroid);
-        }, false, 10, 20);
+        }, false, 20, 40);
     }
 }

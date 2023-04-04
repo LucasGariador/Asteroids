@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         shooting = GetComponent<Shooting>();
-        rb.gravityScale = 0f;
+        rb.gravityScale = 0f; //Set gravity to 0, so the player doesnt fall
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
         ResetOnStartPushing();
     }
-
+    //Change the currentpush to zero, it gives acceleration to the ship at changing direction
     private void ResetOnStartPushing()
     {
         if (startPushing)

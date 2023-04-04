@@ -48,8 +48,8 @@ MonoBehaviour:
   _score: 0
   gameOver: 0
   asteroidsAmount: 8
-  spawnLenght: 15
-  spawnHeight: 10
+  spawnLenght: 10
+  spawnHeight: 5
   spawnDistToPlayer: 5
   spawnDelay: 2
 --- !u!114 &1850930318269982058

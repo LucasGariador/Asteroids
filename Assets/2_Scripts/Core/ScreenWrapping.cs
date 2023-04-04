@@ -45,7 +45,7 @@ public class ScreenWrapping : MonoBehaviour
         Vector3 newPosition = transform.position;
         Vector3 viewportPosition = cam.WorldToViewportPoint(transform.position);
 
-        if (!isWrappingX && (viewportPosition.x > 1 || viewportPosition.x < 0))
+        if (!isWrappingX && (viewportPosition.x > 0.9 || viewportPosition.x < 0.1))
         {
             newPosition.x = -newPosition.x;
 
@@ -53,7 +53,7 @@ public class ScreenWrapping : MonoBehaviour
             isWrappingX = true;
         }
 
-        if (!isWrappingY && (viewportPosition.y > 1 || viewportPosition.y < 0))
+        if (!isWrappingY && (viewportPosition.y > 0.9 || viewportPosition.y < 0.1))
         {
             newPosition.y = -newPosition.y;
 
